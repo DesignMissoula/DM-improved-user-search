@@ -3,7 +3,7 @@
 Plugin Name: DM Improved User Search
 Plugin URI: http://www.blackbam.at/blackbams-blog/2011/06/27/wordpress-improved-user-search-first-name-last-name-email-in-backend/
 Description:  Improves the search for users in the backend significantly: Search for first name, last, email and more of users instead of only nicename.
-Version: 1.2.6
+Version: 1.2.8
 Author: David Stöckl
 Author URI: http://www.blackbam.at/
 GitHub Plugin URI: https://github.com/DesignMissoula/DM-improved-user-search
@@ -96,7 +96,7 @@ if(is_admin()) {
 				// remove whitespace
 				$sanitized = stripslashes(implode(",",array_map('trim', explode(",",$_POST['iusib_meta_fields']))));
 
-				if(preg_match('/^[a-zA-Z0-9,]+$/',$sanitized)) {
+				if(preg_match('/^[a-zA-Z0-9,_]+$/',$sanitized)) {
 					update_option('iusib_meta_fields',$sanitized); 
 				}
 				
